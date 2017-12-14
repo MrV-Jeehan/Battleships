@@ -1,8 +1,7 @@
 #include<bits/stdc++.h>
 #include "front.h"
 #include "grid_make.h"
-#include "noob_play.h"
-#include "pro_play.h"
+#include "play.h"
 using namespace std;
 
 int main(){
@@ -13,12 +12,7 @@ int main(){
 	int grid_player[10][10];
 	get_grid_player(grid_player);
 	cout<<"Now that grid is set, Let's start : "<<endl;
-	if(diff == 1){
-		noob_play(grid_comp,grid_player);	
-	}
-	else{
-		pro_play(grid_comp,grid_player);
-	}
+    play(grid_comp,grid_player,diff);
 	cout<<setw(50)<<"Thank You for playing Battleships"<<endl;
 	return 0;
 }

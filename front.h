@@ -10,7 +10,7 @@ int front_ui(){
 	char ch;
 	cin>>ch;
 	while(ch!='1' && ch!='2'){
-		cout<<"Bro, WTF you got 2 options only, choose appropriately."<<endl;
+		cout<<"Bro,You got 2 options only, choose appropriately."<<endl;
 		cout<<"Choose again now : ";
 		cin>>ch;
 	}

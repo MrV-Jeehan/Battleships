@@ -26,20 +26,21 @@ void get_grid_comp(int grid[][10]){
 		}
 		int v= rand() % 2;		//Setting whether to place ship horizontally or vertically
 		int pos_i,pos_j;
-		if(v==0){
+		if(v==0)
+        {
 			bool overlap=false;
 			do{
 				overlap = false;
 				 pos_i = rand() % 10;		//Setting position in case of horizontal placing
 		 		 pos_j = rand() % (10-size);
-		 		 for(int i=0;i<pos_j+size;i++){
+		 		 for(int i=pos_j;i<pos_j+size;i++){
 		 		 	if(grid[pos_i][i] == 1){
 		 		 		overlap = true;
 		 		 		break;
 		 		 	}
 		 		 }
 			}
-			while(overlap); 	 	
+			while(overlap);
 		}
 		else{
 			bool overlap=false;
@@ -47,18 +48,19 @@ void get_grid_comp(int grid[][10]){
 				overlap = false;
 				 pos_i = rand() % (10-size);		//Setting position in case of vertical placing
 		 		 pos_j = rand() % (10);
-		 		 for(int i=0;i<pos_i+size;i++){
+		 		 for(int i=pos_i;i<pos_i+size;i++){
 		 		 	if(grid[i][pos_j] == 1){
 		 		 		overlap = true;
 		 		 		break;
 		 		 	}
 		 		 }
 			}
-			while(overlap); 
+			while(overlap);
 		}
 		set_ship(grid,pos_i,pos_j,v,size,i);
 	}
-}	
+	//show_grid(grid);
+}
 
 void get_grid_player(int grid[][10]){
 	int n=10;
@@ -71,13 +73,12 @@ void get_grid_player(int grid[][10]){
 	int choice;
 	cin>>choice;
 	if(choice == 1){
-		get_grid_comp(grid);
 		cout<<"Ships placed, your final grid : "<<endl;
-		show_grid(grid);
+		get_grid_comp(grid);
 	}
 	else{
 		cout<<"Rules to place the ships :"<<endl;
-		cout<<"1) Ship can be placed continuoslly."<<endl;
+		cout<<"1) Ship can be placed continuously."<<endl;
 		cout<<"2) No two ships can overlap."<<endl;
 		cout<<"3) Only starting block and vertical or horizontal position is to be entered."<<endl;
 		cout<<endl<<"List of Ships:"<<endl;
@@ -90,7 +91,7 @@ void get_grid_player(int grid[][10]){
 		for(int i=1;i<=5;i++){
 			show_grid(grid);
 			int size;
-			string ship;		
+			string ship;
 			switch(i){
 				case 1:
 					ship = "Carrier";
@@ -127,7 +128,6 @@ void get_grid_player(int grid[][10]){
 			system("clear");
 		}
 		cout<<"Final Grid : "<<endl;
-		show_grid(grid);
+		//show_grid(grid);
 	}
 }
-
